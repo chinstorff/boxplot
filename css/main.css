@@ -31,13 +31,26 @@ p {
     padding-right: 10px;
 }
 
+#column-right {
+    width: 115px;
+    padding: 0px;
+    margin: 0px;
+    float: right;
+}
+
 #spreadsheet {
     background-color: #eee;
     width: 115px;
     float: right;
     display: inline-block;
     overflow: auto;
-    height: 340px;
+    height: 300px;
+}
+
+#new_data {
+    width: 105px;
+    margin: 5px 5px 0px 5px;
+    float: right;
 }
 
 #footer {
@@ -80,7 +93,7 @@ td {
     padding: 0;
 }
 
-tr:first-child td, td:first-child {
+td:first-child {
 		       background-color: #ccc;
 		       padding: 1px 3px;
 		       font-weight: bold;
