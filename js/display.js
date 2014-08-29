@@ -36,12 +36,20 @@ Display.Active.prototype = {
 	Display.scale_text.right = display.add.text(Display.draw_width + Display.draw_offset, Display.height - 20, '0', { font: '20px Arial', fill: '#444' });
 	Display.scale_text.right.anchor.x = 0.7;
 
+	Display.trace_text = display.add.text(5, 5, '', { font: '20px Arial', fill: '#444' });
+	
 	for (var i = 1; i < Display.intervals; i++) {
 	    Display.scale_text["i" + i] = display.add.text(i * Display.width / Display.intervals, Display.height - 20, '0', { font: '20px Arial', fill: '#444' });
 	    Display.scale_text["i" + i].anchor.x = 0.5;
 	}
 
 	this.update_boxplot();
+    },
+
+    update: function () {
+	Display.trace_text.text = 'trace: ' + (Math.round(this.from_pixels(display.input.activePointer.x) * 100) / 100);
+
+//	Math.round((stats.min + i * stats.range / Display.intervals) * 100) / 100;
     },
 
     update_boxplot: function () {
@@ -167,6 +175,10 @@ Display.Active.prototype = {
     
     to_pixels: function (x) {
 	return ((x - stats.min) / stats.range) * (Display.draw_width) + Display.draw_offset;
+    },
+
+    from_pixels: function (x) {
+	return (x - Display.draw_offset) * stats.range / Display.draw_width + stats.min;
     },
 
     quartile_old: function (arr, q) { // q should be 0, 1, 2, 3, or 4
