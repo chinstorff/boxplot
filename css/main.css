@@ -11,7 +11,7 @@ p {
     background-color: #fcc;
     width: 800px;
     margin: 30px auto;
-    padding: 30px;
+    padding: 20px;
 
     border: 1px solid #e5e5e5;
     -webkit-border-radius: 5px;
@@ -44,12 +44,12 @@ p {
     float: right;
     display: inline-block;
     overflow: auto;
-    height: 300px;
+    height: 310px;
 }
 
 #new_data {
     width: 105px;
-    margin: 5px 5px 0px 5px;
+    margin: 15px 5px 0px 5px;
     float: right;
 }
 
@@ -59,6 +59,7 @@ p {
 
 #display {
     display: inline-block;
+    margin-top: 10px;
 }
 
 /* Based on http://jsfiddle.net/ondras/hYfN3/ */
