@@ -7,3 +7,8 @@ var new_data = function (str) {
 	localStorage["ss_A" + i] = arr[i];
     }
 };
+
+new_data_prompt = function () {
+    var str = prompt('Paste your data', '');
+    new_data(str);
+};
