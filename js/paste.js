@@ -4,8 +4,10 @@ var new_data = function (str) {
     localStorage.clear();
 
     for (var i = 0; i < arr.length; i++) {
-	localStorage["ss_A" + i] = arr[i];
+	localStorage["ss_A" + (i+1)] = arr[i];
     }
+
+    computeAll();
 };
 
 new_data_prompt = function () {

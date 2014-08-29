@@ -3,7 +3,7 @@
 var spreadsheet_width  = 1;
 var spreadsheet_height = 100;
 
-for (var i=0; i<spreadsheet_height+1; i++) {
+for (var i=1; i<spreadsheet_height+1; i++) {
     var row = document.querySelector("table").insertRow(-1);
     for (var j=0; j<spreadsheet_width+1; j++) {
 	var letter = String.fromCharCode("A".charCodeAt(0)+j-1);
@@ -19,7 +19,6 @@ INPUTS.forEach(function(elm) {
     elm.onblur = function(e) {
 	localStorage["ss_" + e.target.id] = e.target.value;
 	computeAll();
-	Display.update();
     };
     var getter = function() {
 	var value = localStorage["ss_" + elm.id] || "";
@@ -32,4 +31,5 @@ INPUTS.forEach(function(elm) {
 });
 (window.computeAll = function() {
     INPUTS.forEach(function(elm) { try { elm.value = DATA[elm.id]; } catch(e) {} });
+    Display.update();
 })();
