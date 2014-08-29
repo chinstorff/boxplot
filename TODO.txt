@@ -1,5 +1,5 @@
 * Multiple boxplots
+  + Labels
 * Better input
-  + Accept pasting
   + Spreadsheet arrow keys and enter
-* Labels
+  + Deal with blank input better
