@@ -36,7 +36,7 @@ Display.Active.prototype = {
 	Display.scale_text.right = display.add.text(Display.draw_width + Display.draw_offset, Display.height - 20, '0', { font: '20px Arial', fill: '#444' });
 	Display.scale_text.right.anchor.x = 0.7;
 
-	Display.trace_text = display.add.text(5, 5, '', { font: '20px Arial', fill: '#444' });
+	Display.trace_text = display.add.text(5, 0, '', { font: '20px Arial', fill: '#444' });
 	
 	for (var i = 1; i < Display.intervals; i++) {
 	    Display.scale_text["i" + i] = display.add.text(i * Display.width / Display.intervals, Display.height - 20, '0', { font: '20px Arial', fill: '#444' });
@@ -47,9 +47,9 @@ Display.Active.prototype = {
     },
 
     update: function () {
-	Display.trace_text.text = 'trace: ' + (Math.round(this.from_pixels(display.input.activePointer.x) * 100) / 100);
-
-//	Math.round((stats.min + i * stats.range / Display.intervals) * 100) / 100;
+	var trace_value = this.from_pixels(display.input.activePointer.x).toFixed(2);
+	
+	Display.trace_text.text = (trace_value < stats.min || trace_value > stats.max) ? '' : 'trace: ' + trace_value;
     },
 
     update_boxplot: function () {
