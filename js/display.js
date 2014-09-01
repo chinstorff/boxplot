@@ -59,12 +59,6 @@ Display.Active.prototype = {
 	    this.calculate(arr);
 	    this.draw();
 	}
-
-	$("#q0").html(stats.min);
-	$("#q1").html(stats.q1);
-	$("#q2").html(stats.median);
-	$("#q3").html(stats.q3);
-	$("#q4").html(stats.max);
     },
 
     get_values: function () {
