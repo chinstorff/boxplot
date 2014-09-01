@@ -1,7 +1,7 @@
 /* Based on http://jsfiddle.net/ondras/hYfN3/ */
 
 var spreadsheet_width  = 1;
-var spreadsheet_height = 100;
+var spreadsheet_height = 500;
 
 for (var i=1; i<spreadsheet_height+1; i++) {
     var row = document.querySelector("table").insertRow(-1);
