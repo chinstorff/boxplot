@@ -1,5 +1,5 @@
 var new_data = function (str) {
-    var arr = str.split(/\D+/);
+    var arr = str.split(/[^\d\.\-]/);
 
     localStorage.clear();
 
