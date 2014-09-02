@@ -45,11 +45,12 @@ p {
     display: inline-block;
     overflow: auto;
     height: 310px;
+    margin-bottom: 5px;
 }
 
-#new_data {
-    width: 105px;
-    margin: 15px 5px 0px 5px;
+button {
+    width: 115px;
+    margin: 5px 0px 0px 0px;
     float: right;
 }
 
