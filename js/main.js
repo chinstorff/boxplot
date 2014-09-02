@@ -14,3 +14,15 @@ new_data_prompt = function () {
     var str = prompt('Paste your data', '');
     new_data(str);
 };
+
+download_image = function (link) {
+    link.href = document.getElementsByTagName('canvas')[0].toDataURL("image/png");
+    link.download = 'boxplot.png';
+};
+
+document.getElementById('download_image').addEventListener('click', function () {
+    download_image(this);
+    console.log(this);
+}, false);
+
+    
